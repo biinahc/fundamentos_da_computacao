@@ -81,3 +81,32 @@ print("\nCusto total por loja:")
 for j in range(3):
     print(f"Loja {j+1}: R$ {custo_por_loja[j]:.2f}")
 print(f"\nCusto total de transporte: R$ {custo_total:.2f}")
+
+#Crie uma matriz com valores de 1 a 25. extraia a submariz central 3x3 e calcule a média dos elementos dessa submatriz
+
+matriz10 = np.arange(1, 26).reshape(5, 5)
+submatriz = matriz10[1:4, 1:4]
+media = np.mean(submatriz)
+print("Matriz 5x5:\n", matriz10)
+print("\nSubmatriz 3x3:\n", submatriz)      
+
+#Uma escola registrou as notas de 4 alunos em 3 disciplinas
+# (Matemática, Português e Ciências).
+# As notas estão organizadas em uma matriz 4×3 (linhas = alunos,
+# colunas = disciplinas).
+# Peça ao usuário para digitar as notas de cada aluno.
+# Calcule a média de cada aluno.
+# Calcule a média de cada disciplina.
+
+notas = np.zeros((4, 3), dtype=float)
+for i in range(4):
+    for j in range(3):
+        notas[i][j] = float(input(f"Digite a nota do aluno {i+1} na disciplina {j+1}: ")) 
+media_alunos = np.mean(notas, axis=1)
+media_disciplinas = np.mean(notas, axis=0)
+print("\nMédia de cada aluno:")
+for i in range(4):
+    print(f"Aluno {i+1}: {media_alunos[i]:.2f}")
+print("\nMédia de cada disciplina:")
+for j in range(3):
+    print(f"Disciplina {j+1}: {media_disciplinas[j]:.2f}")
