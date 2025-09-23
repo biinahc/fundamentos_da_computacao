@@ -72,4 +72,12 @@ custo_por_deposito = np.sum(custo_por_rota, axis=1)
 custo_por_loja = np.sum(custo_por_rota, axis=0)
 custo_total = np.sum(custo_por_rota)
 
-print ("")
+print("Custo por rota (depósito -> loja):")
+print(custo_por_rota)
+print("\nCusto total por depósito:")
+for i in range(3):
+    print(f"Depósito {i+1}: R$ {custo_por_deposito[i]:.2f}")
+print("\nCusto total por loja:")
+for j in range(3):
+    print(f"Loja {j+1}: R$ {custo_por_loja[j]:.2f}")
+print(f"\nCusto total de transporte: R$ {custo_total:.2f}")
