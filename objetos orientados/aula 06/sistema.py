@@ -1,3 +1,17 @@
+# Crie um sistema simples de Pedido Online que demonstre tanto a Composição quanto a
+# Agregação:
+# Crie a classe Produto. (Entidade independente, vida longa).
+# Crie a classe ItemPedido. (Entidade dependente, representa um produto dentro de um
+# pedido).
+# Crie a classe Pedido (o "todo").
+# A classe Pedido deve:
+# Ter uma relação de Composição com a classe ItemPedido (os itens são criados e morrem
+# junto com o pedido).
+# Ter uma relação de Agregação com a classe Produto (o pedido usa uma referência ao
+# produto, mas não o destrói).
+# Implemente o código e demonstre a diferença no ciclo de vida ao criar um Produto, criar um
+# Pedido (com o produto), e depois deletar o Pedido.
+
 class Produto:
     def __init__(self, nome, preco):
         self.nome = nome
